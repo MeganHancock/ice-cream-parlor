@@ -1,3 +1,4 @@
-body {
-    background-color: red;
+img {
+    height: 100px;
+    object-fit: cover;
 }

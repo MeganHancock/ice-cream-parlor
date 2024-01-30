@@ -1,4 +1,4 @@
-const iceCream = [{
+const iceCreamFlavors = [{
     name: 'Cookie Dough',
     price: 1.25,
     quantity: 0
@@ -29,3 +29,53 @@ const toppings = [{
     price: .5,
     quantity: 0
 }]
+
+const vessels = [{
+    name: 'Cone',
+    price: 1,
+    quantity: 0,
+},
+{
+    name: 'Waffle Cone',
+    price: 2,
+    quantity: 0,
+},
+{
+    name: 'Cup',
+    price: .5,
+    quantity: 0,
+}]
+
+function addVanilla() {
+    // pull correct obj out of array
+    const vanillaScoop = iceCreamFlavors.find(iceCreamFlavor => iceCreamFlavor.name == 'Vanilla')
+    //                   array-name.find (array-name[i] => 
+    console.log('flavor', vanillaScoop);
+    // increase quantity
+    vanillaScoop.quantity++
+    console.log('scoops', vanillaScoop)
+    findScoopTotal()
+}
+
+function addCookieDough() {
+    const cookieDoughScoop = iceCreamFlavors.find(iceCreamFlavor => iceCreamFlavor.name == 'Cookie Dough')
+    cookieDoughScoop.quantity++
+    console.log('scoops', cookieDoughScoop)
+    findScoopTotal()
+}
+
+function addStrawberry() {
+    const strawberryScoop = iceCreamFlavors.find(iceCreamFlavor => iceCreamFlavor.name == 'Strawberry')
+    strawberryScoop.quantity++
+    console.log('scoops', strawberryScoop)
+    findScoopTotal()
+}
+
+function findScoopTotal() {
+    let total = 0
+    iceCreamFlavors.forEach(iceCreamFlavor => {
+        total += iceCreamFlavor.price * iceCreamFlavor.quantity
+    })
+    console.log('cart total is', total)
+}
+
