@@ -55,6 +55,7 @@ function addVanilla() {
     vanillaScoop.quantity++
     console.log('scoops', vanillaScoop)
     findScoopTotal()
+
 }
 
 function addCookieDough() {
@@ -62,13 +63,16 @@ function addCookieDough() {
     cookieDoughScoop.quantity++
     console.log('scoops', cookieDoughScoop)
     findScoopTotal()
+
 }
 
 function addStrawberry() {
     const strawberryScoop = iceCreamFlavors.find(iceCreamFlavor => iceCreamFlavor.name == 'Strawberry')
     strawberryScoop.quantity++
     console.log('scoops', strawberryScoop)
+
     findScoopTotal()
+
 }
 
 function findScoopTotal() {
@@ -77,5 +81,27 @@ function findScoopTotal() {
         total += iceCreamFlavor.price * iceCreamFlavor.quantity
     })
     console.log('cart total is', total)
+    drawScoopCart()
+
+
+}
+
+function drawScoopCart() {
+    let cart = ''
+
+    const selectedMenuItems = iceCreamFlavors.filter(iceCreamFlavor => iceCreamFlavor.quantity > 0)
+    console.log('filtered menu items', selectedMenuItems);
+
+    selectedMenuItems.forEach(iceCreamFlavor => {
+
+        cart += `
+        <div class="col-6">${iceCreamFlavor.name}</div>
+        <div class="col-2">${iceCreamFlavor.quantity}</div>
+        <div class="col-2">${iceCreamFlavor.price}</div>
+        <div class="col-2">${iceCreamFlavor.price * iceCreamFlavor.quantity}</div>
+        `})
+
+    const selectedCartItemsElement = document.getElementById('cartItems')
+    selectedCartItemsElement.innerHTML = cart
 }
 

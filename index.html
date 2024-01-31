@@ -23,6 +23,8 @@
         <section class="container">
 
             <div class="row">
+
+
                 <div class="col-12 col-md-6 card">
 
                     <div class="row m-1">
@@ -32,12 +34,13 @@
                         <div class="col-2">Total</div>
                     </div>
 
-                    <div class="row m-1">
-                        <div class="col-6">Name</div>
-                        <div class="col-2">Oty</div>
-                        <div class="col-2">Each</div>
-                        <div class="col-2">Total</div>
+                    <div id="cartItems" class="row m-1">
+                        <!-- <div id="itemName" class="col-6">Name</div>
+                        <div id="itemQty" class="col-2">Oty</div>
+                        <div id="itemPriceEach" class="col-2">Each</div>
+                        <div id="itemTotal" class="col-2">Total</div> -->
                     </div>
+
                 </div>
 
                 <div class="col-md-6">
@@ -54,7 +57,7 @@
                                 <div class="card-body">
                                     <p>Vanilla</p>
 
-                                    <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-between flex-wrap">
                                         <p>$1</p>
                                         <button type="button" onclick="addVanilla()"
                                             class="btn btn-outline-secondary text-center">Select</button>
@@ -70,7 +73,7 @@
                                     class="card-img-top" alt="hand holding vanilla ice cream cone">
                                 <div class="card-body">
                                     <p>Cookie Dough</p>
-                                    <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-between flex-wrap">
                                         <p>$1.25</p>
                                         <button type="button" onclick="addCookieDough()"
                                             class="btn btn-outline-secondary text-center">Select</button>
@@ -85,7 +88,7 @@
                                     class="card-img-top" alt="hand holding vanilla ice cream cone">
                                 <div class="card-body">
                                     <p>Strawberry</p>
-                                    <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-between flex-wrap">
                                         <p>$1.25</p>
                                         <button type="button" onclick="addStrawberry()"
                                             class="btn btn-outline-secondary text-center">Select</button>
@@ -107,7 +110,7 @@
                                     class="card-img-top" alt="pile of sprinkles">
                                 <div class="card-body">
                                     <p>Sprinkles</p>
-                                    <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-between flex-wrap">
                                         <p>$0.25</p>
                                         <button type="button"
                                             class="btn btn-outline-secondary text-center">Select</button>
@@ -123,7 +126,7 @@
                                     class="card-img-top" alt="pile of sprinkles">
                                 <div class="card-body">
                                     <p>Chocolate Chips</p>
-                                    <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-between flex-wrap">
                                         <p>$0.25</p>
                                         <button type="button"
                                             class="btn btn-outline-secondary text-center">Select</button>
@@ -138,7 +141,7 @@
                                     class="card-img-top" alt="pile of sprinkles">
                                 <div class="card-body">
                                     <p>Cookie Chunks</p>
-                                    <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-between flex-wrap">
                                         <p>$0.50</p>
                                         <button type="button"
                                             class="btn btn-outline-secondary text-center">Select</button>
@@ -160,10 +163,10 @@
                                     class="card-img-top" alt="waffle cone">
                                 <div class="card-body">
                                     <p>Cone</p>
-                                    <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-between flex-wrap">
                                         <p>$1</p>
                                         <button type="button"
-                                            class="btn btn-outline-secondary text-center">Select</button>
+                                            class="btn btn-outline-secondary text-center ">Select</button>
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +178,7 @@
                                     class="card-img-top" alt="waffle cone">
                                 <div class="card-body">
                                     <p>Waffle Cone</p>
-                                    <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-between flex-wrap">
                                         <p>$2</p>
                                         <button type="button"
                                             class="btn btn-outline-secondary text-center">Select</button>
@@ -190,7 +193,7 @@
                                     class="card-img-top" alt="waffle cone">
                                 <div class="card-body">
                                     <p>Cup</p>
-                                    <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-between flex-wrap">
                                         <p>$0.50</p>
                                         <button type="button"
                                             class="btn btn-outline-secondary text-center">Select</button>
