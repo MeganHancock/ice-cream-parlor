@@ -34,11 +34,20 @@
                         <div class="col-2">Total</div>
                     </div>
 
+                    <!-- NOTE ? can you put a row directly under a row if JS injects cols within -->
                     <div id="cartItems" class="row m-1">
-                        <!-- <div id="itemName" class="col-6">Name</div>
-                        <div id="itemQty" class="col-2">Oty</div>
-                        <div id="itemPriceEach" class="col-2">Each</div>
-                        <div id="itemTotal" class="col-2">Total</div> -->
+                        <div class="col-12"></div>
+                    </div>
+                    <!-- NOTE ? why is the #cartItemsToppings not showing as much padding as the #cartItems div when the HTML template in JS is the same-->
+                    <div id="cartItemsToppings" class="row m-1">
+                        <div class="col-12"></div>
+                    </div>
+
+                    <!-- <div id="cartItemsVessels" class="row-m1 d-flex"></div> -->
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h5>Cart Total: $<span id="cartTotal"></span></h5>
+                        </div>
                     </div>
 
                 </div>
@@ -112,7 +121,7 @@
                                     <p>Sprinkles</p>
                                     <div class="d-flex justify-content-between flex-wrap">
                                         <p>$0.25</p>
-                                        <button type="button"
+                                        <button type="button" onclick="addSprinkles()"
                                             class="btn btn-outline-secondary text-center">Select</button>
                                     </div>
                                 </div>
@@ -128,7 +137,7 @@
                                     <p>Chocolate Chips</p>
                                     <div class="d-flex justify-content-between flex-wrap">
                                         <p>$0.25</p>
-                                        <button type="button"
+                                        <button type="button" onclick="addChocolateChips()"
                                             class="btn btn-outline-secondary text-center">Select</button>
                                     </div>
                                 </div>
@@ -143,7 +152,7 @@
                                     <p>Cookie Chunks</p>
                                     <div class="d-flex justify-content-between flex-wrap">
                                         <p>$0.50</p>
-                                        <button type="button"
+                                        <button type="button" onclick="addCookieChunks()"
                                             class="btn btn-outline-secondary text-center">Select</button>
                                     </div>
                                 </div>

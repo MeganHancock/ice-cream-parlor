@@ -46,6 +46,8 @@ const vessels = [{
     quantity: 0,
 }]
 
+// SECTION ADD SCOOPS
+
 function addVanilla() {
     // pull correct obj out of array
     const vanillaScoop = iceCreamFlavors.find(iceCreamFlavor => iceCreamFlavor.name == 'Vanilla')
@@ -95,6 +97,7 @@ function drawScoopCart() {
     selectedMenuItems.forEach(iceCreamFlavor => {
 
         cart += `
+        
         <div class="col-6">${iceCreamFlavor.name}</div>
         <div class="col-2">${iceCreamFlavor.quantity}</div>
         <div class="col-2">${iceCreamFlavor.price}</div>
@@ -103,5 +106,85 @@ function drawScoopCart() {
 
     const selectedCartItemsElement = document.getElementById('cartItems')
     selectedCartItemsElement.innerHTML = cart
+    calculateCartTotal()
 }
 
+// !SECTION 
+
+// SECTION ADD SPRINKLES
+
+function addSprinkles() {
+    // pull correct obj out of array
+    const sprinklesTopping = toppings.find(topping => topping.name == 'Sprinkles')
+    //                   array-name.find (array-name[i] => 
+    console.log('topping', sprinklesTopping);
+    // increase quantity
+    sprinklesTopping.quantity++
+    console.log('topping', sprinklesTopping)
+    drawToppingsCart()
+
+}
+
+function addChocolateChips() {
+    const sprinklesTopping = toppings.find(topping => topping.name == 'Chocolate Chips')
+    console.log('topping', sprinklesTopping);
+    sprinklesTopping.quantity++
+    drawToppingsCart()
+
+}
+
+function addCookieChunks() {
+    const sprinklesTopping = toppings.find(topping => topping.name == 'Cookie Chunks')
+    sprinklesTopping.quantity++
+    drawToppingsCart()
+}
+
+function drawToppingsCart() {
+    let cart = ''
+
+    const selectedMenuItems = toppings.filter(topping => topping.quantity > 0)
+    console.log('filtered menu items', selectedMenuItems);
+
+    selectedMenuItems.forEach(topping => {
+
+        cart += `
+        
+        <div class="col-6">${topping.name}</div>
+        <div class="col-2">${topping.quantity}</div>
+        <div class="col-2">${topping.price}</div>
+        <div class="col-2">${topping.price * topping.quantity}</div>
+        `})
+
+    const selectedCartItemsElement = document.getElementById('cartItemsToppings')
+    selectedCartItemsElement.innerHTML = cart
+
+    calculateCartTotal()
+}
+
+// !SECTION
+
+// SECTION VESSELS
+
+function addCone() {
+
+}
+
+// !SECTION 
+
+function calculateCartTotal() {
+    let total = 0
+
+    let cartTotal = iceCreamFlavors.forEach(iceCream => {
+        total += iceCream.price * iceCream.quantity
+    }) +
+        toppings.forEach(topping => {
+            total += topping.price * topping.quantity
+        })
+
+    console.log('total', total)
+
+    const cartTotalElement = document.getElementById('cartTotal')
+    cartTotalElement.innerText = total.toString()
+}
+
+// SECTION OTHER FUNCTIONS
